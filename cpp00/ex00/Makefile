@@ -14,7 +14,7 @@ NAME = megaphone
 
 LIST = megaphone.cpp
 
-CC = g++
+CC = c++
 
 FLAGS = -Wall -Werror -Wextra
 

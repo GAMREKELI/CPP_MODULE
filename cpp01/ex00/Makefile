@@ -10,13 +10,11 @@
 #*                                                                            *#
 #* ************************************************************************** *#
 
-NAME = PhoneBook
+NAME = Zombie
 
-LIST = Contact.cpp main.cpp PhoneBook.cpp
+LIST = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 
-HDR1 = Contact.hpp
-
-HDR2 = PhoneBook.hpp
+HDR = Zombie.hpp
 
 CC = c++
 
@@ -27,7 +25,7 @@ OBJ = $(LIST:.cpp=.o)
 ${NAME}:	${OBJ}
 				${CC} ${FLAGS} $^ -o $@
 
-%.o : %.c ${HDR1} ${HDR2} Makefile
+%.o : %.c ${HDR} Makefile
 	${CC} ${FLAGS} -c $< -o $@
 
 all: ${NAME}

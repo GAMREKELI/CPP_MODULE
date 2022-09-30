@@ -10,24 +10,20 @@
 #*                                                                            *#
 #* ************************************************************************** *#
 
-NAME = PhoneBook
+NAME = Zombie
 
-LIST = Contact.cpp main.cpp PhoneBook.cpp
-
-HDR1 = Contact.hpp
-
-HDR2 = PhoneBook.hpp
+LIST = main.cpp
 
 CC = c++
 
-FLAGS = -Wall -Werror -Wextra -std=c++98
+FLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 
 OBJ = $(LIST:.cpp=.o)
 
 ${NAME}:	${OBJ}
 				${CC} ${FLAGS} $^ -o $@
 
-%.o : %.c ${HDR1} ${HDR2} Makefile
+%.o : %.c Makefile
 	${CC} ${FLAGS} -c $< -o $@
 
 all: ${NAME}

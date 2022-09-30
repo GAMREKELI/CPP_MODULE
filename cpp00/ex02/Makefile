@@ -16,7 +16,7 @@ LIST = tests.cpp Account.cpp
 
 HDR = Account.hpp
 
-CC = g++
+CC = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
