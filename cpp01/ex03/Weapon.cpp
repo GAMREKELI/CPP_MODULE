@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdursley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-int main()
+Weapon::Weapon(std::string club)
 {
-    std::string name;
+    _type = club;
+}
 
-    getline(std::cin, name);
-    Zombie zom_from_stack = (std::string (name));
-    zom_from_stack.announce();
+Weapon::~Weapon()
+{
 
-    getline(std::cin, name);
-    Zombie* zom_from_heap = newZombie(name);
-    zom_from_heap->announce();
+}
 
-    randomChump("LoL");
-    delete zom_from_heap;
-    
-    return (0);
+std::string const   &Weapon::getType(void)
+{
+    return (_type);
+}
+
+void    Weapon::setType(std::string type)
+{
+    _type = type;
 }

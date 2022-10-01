@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdursley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include <iostream>
 
-int main()
+HumanA::HumanA(std::string name, Weapon& weap) : weapon(weap)
 {
-    std::string name;
+    name_Human = name;
+    weapon = weap;
+}
 
-    getline(std::cin, name);
-    Zombie zom_from_stack = (std::string (name));
-    zom_from_stack.announce();
+HumanA::~HumanA(void)
+{
 
-    getline(std::cin, name);
-    Zombie* zom_from_heap = newZombie(name);
-    zom_from_heap->announce();
+}
 
-    randomChump("LoL");
-    delete zom_from_heap;
-    
-    return (0);
+void HumanA::attack()
+{
+    std::cout << name_Human << " attacks with their " << weapon.getType() \
+        << std::endl;
 }

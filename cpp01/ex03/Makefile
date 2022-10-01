@@ -5,23 +5,29 @@
 #*                                                    +:+ +:+         +:+     *#
 #*   By: pdursley <marvin@42.fr>                    +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
-#*   Created: 2022/10/01 21:18:44 by pdursley          #+#    #+#             *#
-#*   Updated: 2022/10/01 21:18:46 by pdursley         ###   ########.fr       *#
+#*   Created: 2022/09/27 23:49:44 by pdursley          #+#    #+#             *#
+#*   Updated: 2022/09/27 23:51:46 by pdursley         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
-NAME = Zombie
+NAME = Violence
 
-LIST = main.cpp
+LIST = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 CC = c++
+
+HDR_A = HumanA.hpp
+
+HDR_B = HumanB.hpp
+
+HDR = Weapon.hpp
 
 FLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 
 OBJ = $(LIST:.cpp=.o)
 
 ${NAME}:	${OBJ}
-				${CC} ${FLAGS} $^ -o $@
+				${CC} ${FLAGS} ${HDR_A} ${HDR_B} ${HDR} $^ -o $@
 
 %.o : %.c Makefile
 	${CC} ${FLAGS} -c $< -o $@

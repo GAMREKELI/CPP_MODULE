@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdursley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
-int main()
+#include "Weapon.hpp"
+
+class HumanA
 {
-    std::string name;
+private:
+    std::string name_Human;
+    Weapon& weapon;
 
-    getline(std::cin, name);
-    Zombie zom_from_stack = (std::string (name));
-    zom_from_stack.announce();
+public:
+    HumanA(void);
+    HumanA(std::string name, Weapon& weap);
+    ~HumanA(void);
+    void    attack();
+};
 
-    getline(std::cin, name);
-    Zombie* zom_from_heap = newZombie(name);
-    zom_from_heap->announce();
-
-    randomChump("LoL");
-    delete zom_from_heap;
-    
-    return (0);
-}
+#endif

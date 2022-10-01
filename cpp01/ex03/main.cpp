@@ -10,22 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {
-    std::string name;
-
-    getline(std::cin, name);
-    Zombie zom_from_stack = (std::string (name));
-    zom_from_stack.announce();
-
-    getline(std::cin, name);
-    Zombie* zom_from_heap = newZombie(name);
-    zom_from_heap->announce();
-
-    randomChump("LoL");
-    delete zom_from_heap;
-    
-    return (0);
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 }

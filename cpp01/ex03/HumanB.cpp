@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HunabB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdursley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
+#include <iostream>
 
-int main()
+HumanB::HumanB(std::string name)
 {
-    std::string name;
+    name_Human = name;
+}
 
-    getline(std::cin, name);
-    Zombie zom_from_stack = (std::string (name));
-    zom_from_stack.announce();
+HumanB::~HumanB()
+{
 
-    getline(std::cin, name);
-    Zombie* zom_from_heap = newZombie(name);
-    zom_from_heap->announce();
+}
 
-    randomChump("LoL");
-    delete zom_from_heap;
+void HumanB::setWeapon(Weapon& weap)
+{
+    weapon = &weap;
+}
+
+void HumanB::attack()
+{
+    std::cout << name_Human << " attacks with his "; // << std::endl;
+    if (weapon)
+        std::cout << weapon->getType() << std::endl;
+    else
+        std::cout << "bare fists" << std::endl;
     
-    return (0);
 }
