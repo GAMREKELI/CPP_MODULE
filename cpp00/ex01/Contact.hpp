@@ -17,7 +17,8 @@
 #include <limits>
 #include <string>
 
-class   Contact{
+class   Contact
+{
 private:
     std::string index;
     std::string first_name;

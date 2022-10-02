@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 #include "Contact.hpp"
 
-Contact::Contact(){
+Contact::Contact()
+{
     return ;
 }
 
@@ -25,7 +26,8 @@ Contact::Contact(std::string f_name, std::string l_name, \
     darkest_secret = secret;
 }
 
-void Contact::display_new(){
+void Contact::display_new()
+{
     std::cout << "First name---> " << first_name << std::endl;
     std::cout << "Last name---> " << last_name << std::endl;
     std::cout << "Nickname---> " << nickname << std::endl;
@@ -33,30 +35,37 @@ void Contact::display_new(){
     std::cout << "Darkest secret---> " << darkest_secret << std::endl;
 }
 
-std::string Contact::ft_return_res(int flag){
+std::string Contact::ft_return_res(int flag)
+{
     std::string f_name;
     std::string l_name;
     std::string n_name;
 
-    if (flag == 3){
+    if (flag == 3)
+    {
         f_name = first_name;
-        if (f_name.length() > 10){
+        if (f_name.length() > 10)
+        {
             f_name = f_name.substr(0,9);
             f_name.append(".");
         }
         return (f_name);
     }
-     if (flag == 2){
+     if (flag == 2)
+     {
         l_name = last_name;
-        if (l_name.length() > 10){
+        if (l_name.length() > 10)
+        {
             l_name = l_name.substr(0,9);
             l_name.append(".");
         }
         return (l_name);
     }
-     if (flag == 1){
+     if (flag == 1)
+     {
         n_name = nickname;
-        if (n_name.length() > 10){
+        if (n_name.length() > 10)
+        {
             n_name = n_name.substr(0,9);
             n_name.append(".");
         }    
@@ -65,8 +74,10 @@ std::string Contact::ft_return_res(int flag){
     return (NULL);
 }
 
-void Contact::display(int flag, int i){
-    if (flag == 0){
+void Contact::display(int flag, int i)
+{
+    if (flag == 0)
+    {
         std::cout << "---------------------------------------------" << std::endl;
         std::cout << "|" << std::setw(10) << std::right << "Index";
         std::cout << "|" << std::setw(10) << std::right << "First name";
@@ -83,7 +94,8 @@ void Contact::display(int flag, int i){
         std::cout << "|" << std::setw(10) << std::right << Contact::ft_return_res(2);
     if (flag == 1)
         std::cout << "|" << std::setw(10) << std::right << Contact::ft_return_res(1);
-    if (flag == 228){
+    if (flag == 228)
+    {
         std::cout << " The phone book is empty!" << std::endl;
         std::cout << " Use ADD to add a contact." << std::endl;
     }

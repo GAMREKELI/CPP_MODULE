@@ -12,7 +12,8 @@
 
 #include <iostream>
 
-void    ft_write_error(void){
+void    ft_write_error(void)
+{
     std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
     return ;
 }
@@ -21,9 +22,11 @@ void    ft_write(char **str){
     int i = 1;
     int j  = -1;
 
-    while (str[i]){
+    while (str[i])
+    {
         j = -1;
-        while (str[i][++j]){
+        while (str[i][++j])
+        {
             std::cout << (char)toupper(str[i][j]);
         }
         if (str[i + 1])
@@ -33,8 +36,10 @@ void    ft_write(char **str){
     return ;
 }
 
-int main(int argc, char **argv){
-    if (argc < 2){
+int main(int argc, char **argv)
+{
+    if (argc < 2)
+    {
         ft_write_error();
         return (1);
     }

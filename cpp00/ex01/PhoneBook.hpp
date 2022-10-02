@@ -18,10 +18,12 @@
 #define COLUMS 4
 #define MAX 8
 
-class PhoneBook{
+class PhoneBook
+{
 private:
     Contact contacts[8];
     int num;
+    int cout;
 
 public:
     PhoneBook();
