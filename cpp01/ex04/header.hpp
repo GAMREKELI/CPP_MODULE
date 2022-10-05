@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   header.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdursley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,28 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HEADER_HPP
+#define HEADER_HPP
 
-void Zombie::setName(std::string name)
-{
-    Zombie_name = name;
-}
+#include <iostream>
+#include <fstream>
+#include <string>
 
-Zombie* zombieHorde( int N, std::string name )
-{
-
-    std::string line_name;
-    char num[2];
-
-    if (N <= 0)
-        return NULL;
-    Zombie* Horde = new Zombie[N];
-    for (int i = 0; i < N; i++)
-    {
-        num[0] = (i + 1) + '0';
-        num[1] = '\0';
-        line_name = name + " " + num;
-        Horde[i].setName(line_name);
-    }
-    return (Horde);
-}
+#endif

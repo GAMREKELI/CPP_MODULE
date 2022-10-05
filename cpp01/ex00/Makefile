@@ -20,12 +20,12 @@ CC = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-OBJ = $(LIST:.cpp=.o)
+OBJ = $(patsubst %.cpp,%.o,${LIST})
 
-${NAME}:	${OBJ}
-				${CC} ${FLAGS} $^ -o $@
+${NAME}: ${OBJ}
+			${CC} ${FLAGS} $^ -o $@
 
-%.o : %.c ${HDR} Makefile
+%.o : %.cpp ${HDR} Makefile
 	${CC} ${FLAGS} -c $< -o $@
 
 all: ${NAME}

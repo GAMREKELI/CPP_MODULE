@@ -12,14 +12,7 @@
 
 #include "Zombie.hpp"
 
-Zombie* newZombie(std::string name)
-{
-    return new Zombie(name);
-}
-
-Zombie::Zombie()
-{
-	std::cout << "Norm!" << std::endl;
+Zombie::Zombie() {
 }
 
 Zombie::Zombie(std::string name)

@@ -18,12 +18,12 @@ CC = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 
-OBJ = $(LIST:.cpp=.o)
+OBJ = $(patsubst %.cpp,%.o,${LIST})
 
 ${NAME}:	${OBJ}
 				${CC} ${FLAGS} $^ -o $@
 
-%.o : %.c Makefile
+%.o : %.cpp Makefile
 	${CC} ${FLAGS} -c $< -o $@
 
 all: ${NAME}
