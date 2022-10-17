@@ -3,7 +3,7 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-    std::cout << "Constructor Scav(void) " << std::endl;
+    std::cout << "Constructor ScavTrap(void) " << std::endl;
     this->Hit_points = 100;
     this->Energy_points = 50;
     this->Attack_damage = 20;
@@ -26,7 +26,7 @@ ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "Destructor for " << this->Name << " called" << std::endl;
+    std::cout << "Destructor ScavTrap for " << this->Name << " called" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& f)

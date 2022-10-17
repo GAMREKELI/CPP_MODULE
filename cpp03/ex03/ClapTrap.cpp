@@ -15,7 +15,7 @@ ClapTrap::ClapTrap(std::string name)
     Hit_points = HIT;
     Energy_points = ENERGY;
     Attack_damage = ATTACK;
-    std::cout << "Constructor ClapTrap(" << name << ") called" << std::endl;
+    std::cout << "Constructor ClapTrap " << name << " called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& update)
@@ -24,12 +24,11 @@ ClapTrap::ClapTrap(const ClapTrap& update)
     Hit_points = update.Hit_points;
     Energy_points = update.Energy_points;
     Attack_damage = update.Attack_damage;
-    std::cout << "ClapTrap copy constructor called on " << update.Name << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Distructor ClapTrap() for " << this->Name << "called" << std::endl;
+    std::cout << "Distructor ClapTrap for " << this->Name << " called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& f)

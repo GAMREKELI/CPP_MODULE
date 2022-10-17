@@ -28,7 +28,7 @@ ClapTrap::ClapTrap(const ClapTrap& update)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Distructor ClapTrap() called" << std::endl;
+    std::cout << "Distructor ClapTrap called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& f)
