@@ -23,11 +23,6 @@ Animal::Animal(const Animal& f)
     std::cout << "Constructor Animal called copy on " << f._type << std::endl;
 }
 
-void Animal::makeSound() const
-{
-    std::cout << "Default animal sound" << std::endl;
-}
-
 std::string Animal::getType() const
 {
     return (this->_type);

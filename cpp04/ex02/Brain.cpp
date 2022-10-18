@@ -27,13 +27,3 @@ Brain::~Brain()
 {
     std::cout << "Brain destructor called" << std::endl;
 }
-
-// const std::string& Brain::getIdea(int num) const
-// {
-// 	return this->_ideas[num];
-// }
-
-// const std::string& Brain::getIdea(int index) const
-// {
-// 	return this->_ideas[index];
-// }

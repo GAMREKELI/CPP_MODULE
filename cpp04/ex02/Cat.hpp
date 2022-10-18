@@ -16,7 +16,7 @@ public:
 
     Brain* getBrain() const;
 
-    void makeSound() const;
+    virtual void makeSound() const;
 
 private:
     Brain* _brain;

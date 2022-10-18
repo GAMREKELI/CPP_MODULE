@@ -18,7 +18,7 @@ public:
 
     virtual Animal& operator=(const Animal& f);
 
-    virtual void makeSound() const;
+    virtual void makeSound() const = 0;
 
     virtual Brain   *getBrain() const;
 
