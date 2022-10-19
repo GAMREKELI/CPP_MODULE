@@ -12,7 +12,7 @@
 
 NAME = Bureaucrat
 
-LIST = main.cpp Bureaucrat.cpp
+LIST = main.cpp Bureaucrat.cpp Form.cpp
 
 CC = c++
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                      		                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdursley <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/27 19:17:33 by pdursley          #+#    #+#             */
+/*   Updated: 2022/09/27 19:17:33 by pdursley         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 int main()
@@ -9,12 +21,11 @@ int main()
 	{
 		std::cout << john << std::endl;
 		std::cout << jim << std::endl;
-		john.incrementGrade();
-		jim.decrementGrade();
+		john.decrementGrade();
+		jim.incrementGrade();
 		std::cout << john << std::endl;
 		std::cout << jim << std::endl;
-		john.incrementGrade();
-		jim.decrementGrade();
+		john.decrementGrade();
 		std::cout << john << std::endl;
 		std::cout << jim << std::endl;
 	}

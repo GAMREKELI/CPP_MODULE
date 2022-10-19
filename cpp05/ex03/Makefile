@@ -12,11 +12,11 @@
 
 NAME = Bureaucrat
 
-LIST = main.cpp Bureaucrat.cpp
+LIST = main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp Intern.cpp
 
 CC = c++
 
-FLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
 OBJ = $(patsubst %.cpp,%.o,${LIST})
 

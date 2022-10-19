@@ -1,30 +1,40 @@
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pdursley <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/27 19:17:33 by pdursley          #+#    #+#             */
+/*   Updated: 2022/09/27 19:17:33 by pdursley         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include <string>
 #include <iostream>
 
 class Bureaucrat
 {
 public:
-    Bureaucrat();
-    Bureaucrat(std::string const name, unsigned int grade);
-    Bureaucrat(const Bureaucrat& B);
+	// Constructors
+	Bureaucrat();
+	Bureaucrat(std::string const name, unsigned int grade);
+	Bureaucrat(const Bureaucrat& copy);
 
-    // Bureaucrat&         operator=(const Bureaucrat& B);
+	// Assignment operator overload
+	Bureaucrat& operator=(const Bureaucrat& b);
 
-    ~Bureaucrat();
+	// Destructor
+	~Bureaucrat();
 
-    Bureaucrat&         operator=(const Bureaucrat& B);
+	// Getters
+	std::string const getName() const;
+	unsigned int getGrade() const;
 
-    std::string const   getName() const;
-    unsigned int        getGrade() const;
+	void incrementGrade();
+	void decrementGrade();
 
-    void                incrementGrade();
-	void                decrementGrade();
-
-    // void                SetName(std::string const name);
-
-    class GradeTooHighException : public std::exception
+	class GradeTooHighException : public std::exception
 	{
 	public:
 		const char* what() const throw()
@@ -43,10 +53,9 @@ public:
 	};
 
 private:
-    std::string const	Name;
-	unsigned int		Grade;
+
+	std::string const	_name;
+	unsigned int		_grade;
 };
 
-std::ostream&           operator<<(std::ostream& out, const Bureaucrat& f);
-
-#endif
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& b);
