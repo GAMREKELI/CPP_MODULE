@@ -1,5 +1,5 @@
 #ifndef TYPES_HPP
-#define TYPED_HPP
+#define TYPES_HPP
 
 #define INT
 #define CHAR
@@ -7,22 +7,15 @@
 #define DOUBLE
 
 #include <iostream>
-#include <math.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include <limits>
 
 class Types
 {
 	public:
 		Types();
-		//Types(const std::string type);
 
 		~Types();
-
-		//int		toInt(std::string i);
-		//float	toFloat(std::string f);
-		//double	toDouble(std::string d);
-		//char	toChar(std::string c);
 
 		void	printInt(int num);
 		void	printChar(unsigned char c);
@@ -42,7 +35,6 @@ class Types
 
 	private:
 		std::string	arg;
-
 		int			_typecode;
 		int			_int;
 		float		_float;
@@ -52,4 +44,4 @@ class Types
 
 #endif
 
-//bool	isChar(std::string input);
+int	specSymb(std::string input);

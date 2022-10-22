@@ -5,7 +5,7 @@ Types::Types()
 	this->arg = "noup";
 	this->_typecode = -1;
 	this->_int = 0;
-	this->_double = 0.0d;
+	this->_double = 0.0;
 	this->_float = 0.0f;
 	this->_char = 0;
 }
@@ -22,10 +22,10 @@ std::string Types::toString(char *av)
 
 bool	isChar(std::string input)
 {
-	int	i = 0;
-
-	if (input.length() == 1 && (input[i] < 48 || input[i] > 9))
-		return (true);
+	if (input.length() == 1 && (input[0] > '9' || input[0] < '0'))
+    {
+        return (true);
+    }
 	return (false);
 }
 
@@ -42,15 +42,17 @@ int Types::getType(std::string input)
 	int	powf = 0;
 	int ff = 0;
 
-	if (isChar(input))
+	if (specSymb(input)){
+        return (specSymb(input));
+    }
+	if (isChar(input) == true)
 		return (1);
 	if (input[i] == '-')
 		++i;
 	if (input[i] == '.' && input[i + 1] == 'f')
 			return (0);
 	while ((input[i] >= 48 && input[i] <= 57) || (input[i] == '.' && !dot) \
-			|| (input[i] == 'e' && !powf) \
-			|| (input[i] == 'f' && !ff))
+			|| (input[i] == 'e' && !powf) || (input[i] == 'f' && !ff))
 	{
 		switch(input[i])
 		{
@@ -77,10 +79,10 @@ int Types::getType(std::string input)
 		if (dot)
 		{
 			if (ff)
-				return (3); //float
-			return (4); //double
+				return (3);
+			return (4);
 		}
-		return (2); // int
+		return (2);
 	}
 	return (0);
 
@@ -97,7 +99,7 @@ void	Types::printInt(int num)
 
 void	Types::printChar(unsigned char c)
 {
-	if (c >= 32 || c <= 126)
+	if (!(c < 32 || c > 126))
 		std::cout << c << std::endl;
 	else
 		std::cout << "Non displayed" << std::endl;
@@ -115,10 +117,10 @@ void	Types::printFloat(float f)
 
 void	Types::printDouble(double d)
 {
-	if (d - (int)d == (double)d)
-		std::cout << d << ".0d" << std::endl;
+	if (d - (int)d == (double)0)
+		std::cout << d << ".0" << std::endl;
 	else
-		std::cout << d << "d" << std::endl;
+		std::cout << d << std::endl;
 	return ;
 }
 
@@ -131,19 +133,32 @@ int	Types::setCode(void)
 void	Types::setChar(char c)
 {
 	this->_char = c;
+	Types::printChar(this->_char);
 }
 
 void	Types::setInt(int i)
 {
 	this->_int = i;
+	Types::printInt(this->_int);
 }
 
 void	Types::setDouble(double d)
 {
 	this->_double = d;
+	Types::printDouble(this->_double);
 }
 
 void	Types::setFloat(float f)
 {
 	this->_float = f;
+	Types::printFloat(this->_float);
+}
+
+int	specSymb(std::string input)
+{
+	if (input == "+inff" || input == "-inff" || input == "nanf")
+		return (3);
+	if (input == "+inf" || input == "-inf" || input == "nan")
+		return (4);
+	return (0);
 }

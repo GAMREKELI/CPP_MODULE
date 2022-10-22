@@ -16,6 +16,8 @@ LIST = main.cpp Types.cpp
 
 CC = c++
 
+HDR = Types.hpp
+
 FLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 
 OBJ = $(patsubst %.cpp,%.o,${LIST})

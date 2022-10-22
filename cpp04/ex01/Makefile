@@ -29,7 +29,7 @@ FLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 OBJ = $(patsubst %.cpp,%.o,${LIST})
 
 ${NAME}:	${OBJ}
-				${CC} ${FLAGS} ${HDR1} ${HDR2} ${HDR3} ${HDR4} $^ -o $@
+				${CC} ${FLAGS} -I ./ $^ -o $@
 
 %.o : %.cpp Makefile
 	${CC} ${FLAGS} -c $< -o $@
