@@ -1,10 +1,10 @@
-#ifndef HEADER_HPP
-#define HEADER_HPP
+#ifndef DATA_HPP
+# define DATA_HPP
+
 #include <iostream>
 #include <stdint.h>
 
-struct  Data
-{
+struct Data{
     std::string data;
 };
 
