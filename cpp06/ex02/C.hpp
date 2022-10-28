@@ -3,6 +3,6 @@
 class C : public Base
 {
     public:
-        C(){}
-        ~C(){}
+        C(){std::cout << "Default constructor C" << std::endl;}
+        ~C(){std::cout << "Distructor C" << std::endl;}
 };

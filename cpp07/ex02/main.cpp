@@ -1,6 +1,4 @@
 #include "Array.hpp"
-#include <stdlib.h>
-
 
 int main()
 {

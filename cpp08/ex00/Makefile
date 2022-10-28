@@ -10,7 +10,7 @@
 #*                                                                            *#
 #* ************************************************************************** *#
 
-NAME = Types
+NAME = easyfind
 
 LIST = main.cpp
 
@@ -21,7 +21,7 @@ FLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 OBJ = $(patsubst %.cpp,%.o,${LIST})
 
 ${NAME}:	${OBJ}
-				${CC} ${FLAGS} -I ./ $^ -o $@
+				${CC} ${FLAGS} $^ -o $@
 
 %.o : %.cpp Makefile
 	${CC} ${FLAGS} -c $< -o $@

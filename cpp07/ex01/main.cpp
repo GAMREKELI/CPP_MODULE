@@ -1,17 +1,27 @@
 #include "iter.hpp"
+#include <string>
+#include <cstring>
 
 void ft_lower(const std::string& str)
 {
-	for (std::string::const_iterator itr = str.begin(); itr != str.end(); itr++)
-		std::cout << (char)tolower(*itr);
+	int i = -1;
+	char *string_low = new char [str.length() + 1];
+	std::strcpy(string_low, str.c_str());
+	while (str[++i])
+		std::cout << (char)tolower(str[i]);
 	std::cout << " ";
+	delete [] string_low;
 }
 
 void ft_upper(const std::string& str)
 {
-	for (std::string::const_iterator itr = str.begin(); itr != str.end(); itr++)
-		std::cout << (char)toupper(*itr);
+	int i = -1;
+	char *string_low = new char [str.length() + 1];
+	std::strcpy(string_low, str.c_str());
+	while (str[++i])
+		std::cout << (char)toupper(str[i]);
 	std::cout << " ";
+	delete [] string_low;
 }
 
 int main()

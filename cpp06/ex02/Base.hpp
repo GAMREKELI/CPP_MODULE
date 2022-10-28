@@ -7,8 +7,8 @@
 class Base
 {
     public:
-        Base(){}
-        virtual ~Base(){}
+        Base(){std::cout << "Default constructor Base" << std::endl;}
+        virtual ~Base(){std::cout << "Distructor Base" << std::endl;}
 };
 
 #endif
